@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= typeof title === "undefined" ? "EIA" : title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='/stylesheets/<%= typeof stylesheet === "undefined" ? "application" : stylesheet %>.css' />
+    <link rel='stylesheet' href='/vendor/fullpagejs/jquery.fullPage.css' />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    
+    <%- body %>  
+    
+    <script src="/vendor/jquery.min.js"></script>
+    <script src="/vendor/fullpagejs/jquery.slimscroll.min.js"></script>
+    <script src="/vendor/fullpagejs/jquery.easings.min.js"></script>
+    <script src="/vendor/fullpagejs/jquery.fullPage.min.js"></script>
+    <script src="/scripts/site.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){ 
+        $('#fullpage').fullpage({
+          menu: '#menu',
+          anchors: ['welcome', 'who-we-are', 'what-we-do', 'get-involved', 'work-with-us', 'thank-you'],
+          navigation: true,
+          navigationPosition: 'right',
+          slidesNavigation: true,
+          slideNavPosition: 'bottom',
+          controlArrows: false,
+          css3: true,
+          touchSensitivity: 5,
+          keyboardScrolling: true,
+          afterLoad: function(anchorLink, index){
+            if(anchorLink != 'welcome') {
+              $('#menu').hide();
+            } else {
+              $('#menu').show();
+            }
+
+            if(anchorLink == 'what-we-do') {
+              $('#fp-nav').hide();
+            } else {
+              $('#fp-nav').show();
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

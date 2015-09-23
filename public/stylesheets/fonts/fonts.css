@@ -1,0 +1,33 @@
+@font-face {
+  font-family: infinity;
+  src: url(infinity.ttf);
+}
+
+@font-face {
+  font-family: adam;
+  src: url(adam.otf);
+}
+
+@font-face {
+  font-family: code;
+  src: url(code-light.otf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: code;
+  src: url(code-bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: neoteric;
+  src: url(neoteric-regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: neoteric-bold;
+  src: url(neoteric-bold.ttf);
+  font-weight: bold;
+}
